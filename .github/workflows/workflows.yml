@@ -36,7 +36,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t chichia/terrf:latest .
+        run: docker build -t chichia/terraf:latest .
 
       - name: Push Docker image to Docker Hub
-        run: docker push chichia/terrf:latest
+        run: docker push chichia/terraf:latest
