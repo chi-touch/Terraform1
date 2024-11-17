@@ -205,11 +205,11 @@ resource "aws_security_group" "app_sg" {
 
 
 # Define an EC2 instance with a user data script
-#resource "aws_instance" "app_instance" {
-#  ami               = data.aws_ami.ubuntu.id
-#  instance_type     = var.instance_type
-#  key_name          = var.key_name
-#  vpc_security_group_ids = [aws_security_group.app_sg.id]
+resource "aws_instance" "app_instance" {
+  ami               = data.aws_ami.ubuntu.id
+  instance_type     = "t2.micro"
+  key_name          = var.key_name
+  vpc_security_group_ids = [aws_security_group.app_sg.id]
 
   # Use the user data script to install Docker and run the app
 user_data = <<-EOF
